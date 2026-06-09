@@ -1,30 +1,615 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Site Under Maintenance</title>
+<title>~*~ DIGITAL PIRACY TODAY ~*~ CMST 102</title>
 <style>
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
-    color: #000;
-    text-align: center;
-    padding: 24px;
-  }
-  p {
-    max-width: 640px;
-    font-size: 1.25rem;
-    line-height: 1.6;
-  }
+body {
+  margin: 0;
+  padding: 16px;
+  background: #808080 url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' fill='%23696969'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23696969'/%3E%3C/svg%3E");
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #000;
+}
+a:link { color: #0000EE; }
+a:visited { color: #551A8B; }
+a:active { color: #FF0000; }
+.blink { animation: blink 1s step-start infinite; }
+@keyframes blink { 50% { visibility: hidden; } }
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #000;
+  color: #0F0;
+  padding: 5px;
+  border: 2px inset #404040;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+}
+.marquee span { display: inline-block; animation: scroll 22s linear infinite; }
+@keyframes scroll { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #FFFFCC;
+  border: 4px ridge #808080;
+  padding: 10px;
+}
+.banner {
+  text-align: center;
+  background: #000080;
+  color: #FFFF00;
+  border: 3px double #000;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+.banner h1 {
+  margin: 4px 0;
+  font-size: 26px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-shadow: 2px 2px #000;
+}
+.banner .subtitle { font-size: 12px; font-style: italic; color: #CCC; }
+table.layout { width: 100%; border-collapse: collapse; }
+td.sidebar {
+  width: 155px;
+  vertical-align: top;
+  background: #C0C0FF;
+  border: 2px inset #808080;
+  padding: 10px;
+  font-size: 14px;
+}
+td.main {
+  vertical-align: top;
+  padding: 14px 16px;
+  border: 2px inset #808080;
+  background: #FFF;
+}
+.nav a {
+  display: block;
+  margin: 7px 0;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  text-decoration: none;
+}
+.nav a.active { font-weight: bold; color: #FF0000; }
+hr.rainbow {
+  border: 0;
+  height: 6px;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  margin: 14px 0;
+}
+.page { display: none; }
+.page.active { display: block; }
+h2 {
+  text-align: center;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: #000080;
+  margin-top: 0;
+}
+h3 {
+  color: #800000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  border-bottom: 1px dashed #999;
+  padding-bottom: 4px;
+}
+figure { margin: 16px 0; text-align: center; }
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 3px ridge #808080;
+  padding: 3px;
+  background: #FFF;
+}
+figcaption {
+  font-size: 12px;
+  color: #444;
+  font-style: italic;
+  margin-top: 6px;
+}
+.box {
+  border: 2px groove #808080;
+  padding: 10px 12px;
+  margin: 12px 0;
+  background: #F0F0F0;
+}
+.sources {
+  margin-top: 20px;
+  padding: 10px 12px;
+  background: #E8E8FF;
+  border: 2px inset #808080;
+  font-size: 13px;
+}
+.sources ul { margin: 6px 0 0; padding-left: 22px; }
+.callout {
+  background: #FFFACD;
+  border: 2px dashed #FF6600;
+  padding: 10px 12px;
+  margin: 14px 0;
+}
+.required-note {
+  font-weight: bold;
+  background: #CCFFCC;
+  border: 2px solid #009900;
+  padding: 10px 12px;
+  margin: 14px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.construction {
+  text-align: center;
+  font-weight: bold;
+  color: #FF6600;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+}
+.counter {
+  background: #000;
+  color: #0F0;
+  font-family: "Courier New", monospace;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px inset #808080;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+.badge {
+  display: inline-block;
+  border: 2px outset #808080;
+  background: #CCC;
+  padding: 3px 7px;
+  font-size: 10px;
+  margin: 3px;
+  font-family: "Courier New", monospace;
+}
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 14px 0;
+  background: #FFF;
+}
+table.data th, table.data td {
+  border: 1px solid #000;
+  padding: 6px 8px;
+  vertical-align: top;
+  text-align: left;
+}
+table.data th { background: #000080; color: #FFFF00; font-family: Arial, sans-serif; }
+table.data tr:nth-child(even) { background: #FFFFEE; }
+.timeline {
+  list-style: square;
+  padding-left: 22px;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.timeline li { margin-bottom: 8px; }
+.timeline strong { color: #000080; }
+.media-example {
+  border: 2px groove #808080;
+  padding: 10px 12px;
+  margin: 10px 0;
+  background: #FAFAFA;
+}
+.media-example h4 {
+  margin: 0 0 6px;
+  color: #800000;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+.embed { margin: 16px 0; text-align: center; }
+.embed iframe { max-width: 100%; border: 3px ridge #808080; }
+form.contact-form { max-width: 480px; margin: 14px 0; }
+form.contact-form label {
+  display: block;
+  margin: 10px 0 3px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+form.contact-form input[type="text"],
+form.contact-form input[type="email"],
+form.contact-form textarea {
+  width: 100%;
+  padding: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  border: 2px inset #808080;
+  background: #FFF;
+}
+form.contact-form button {
+  margin-top: 12px;
+  padding: 6px 16px;
+  background: #C0C0C0;
+  border: 2px outset #808080;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+form.contact-form button:active { border-style: inset; }
+.site-footer {
+  text-align: center;
+  font-size: 11px;
+  margin-top: 10px;
+  color: #333;
+  font-family: "Courier New", monospace;
+}
+.thanks { color: #006600; font-weight: bold; font-family: Arial, sans-serif; }
 </style>
 </head>
 <body>
-  <p>IF YOU ARE SEEING THIS, THE WEBSITE IS CURRENTLY STILL 'BUILDING' OR PUSHING OUT TO RELEASE ON THE HOSTED REPO FOR IT (THE WOES OF NOT USING A WEBSITE CREATOR). PLEASE CHECK BACK LATER!! IF YOU ARE READING THIS PAST JUNE 8TH 10 PM, CONTACT ME THROUGH CANVAS</p>
+
+<div class="wrap">
+
+<div class="banner">
+  <h1><span class="blink">&#9760;</span> DIGITAL PIRACY TODAY <span class="blink">&#9760;</span></h1>
+  <div class="subtitle">The Resurgence of Digital Piracy in the Modern Age &nbsp;|&nbsp; CMST 102 @ Skagit Valley College</div>
+  <div class="subtitle">best viewed at 800x600 &nbsp;|&nbsp; Netscape Navigator friendly!!!</div>
+</div>
+
+<div class="marquee"><span>&#9733; WELCOME TO MY RESEARCH SITE &#9733; 229 BILLION PIRACY VISITS IN 2023 &#9733; STREAMING FRAGMENTATION DRIVES THE SURGE &#9733; EXPLORE ALL 5 PAGES &#9733; SOURCES CITED ON EVERY PAGE &#9733;</span></div>
+
+<table class="layout">
+<tr>
+<td class="sidebar">
+  <center><b>&#9660; NAVIGATE &#9660;</b></center>
+  <div class="nav">
+    <a href="#" id="nav-home" class="active" onclick="showPage('home');return false;">[ HOME ]</a>
+    <a href="#" id="nav-about" onclick="showPage('about');return false;">[ ABOUT ]</a>
+    <a href="#" id="nav-overview" onclick="showPage('overview');return false;">[ TOPIC OVERVIEW ]</a>
+    <a href="#" id="nav-media" onclick="showPage('media');return false;">[ MEDIA COVERAGE ]</a>
+    <a href="#" id="nav-contact" onclick="showPage('contact');return false;">[ CONTACT ]</a>
+  </div>
+  <hr>
+  <center>
+    <div class="box" style="font-size:11px;">
+      <b>NOW READING:</b><br>
+      <i>MUSO 2023 Piracy By Industry Report</i>
+    </div>
+    <br>
+    <span class="badge">HTML 4.01</span>
+    <span class="badge">CMST 102</span>
+    <span class="badge">NOT AOL</span>
+  </center>
+</td>
+<td class="main">
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <h2>~*~ HOMEPAGE ~*~</h2>
+  <hr class="rainbow">
+
+  <p>Digital piracy remains a widespread global issue. According to industry analyses, billions of copyrighted movies, shows, music albums and games are accessed illegally online each year. Media reports indicate that over 229 billion site visits were made to piracy websites in 2023 alone, up from roughly 190 billion in 2018 (<a href="https://www.electroiq.com/stats/piracy-statistics/" target="_blank">ElectroIQ</a>). This resurgence reverses a prior decline, for instance, one study notes a recent rise of 18% in piracy traffic from 2021 to 2023 (<a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO</a>). In short, many viewers around the world continue to obtain &ldquo;free&rdquo; content online despite legal alternatives.</p>
+
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Edward_England.svg/1920px-Flag_of_Edward_England.svg.png" width="320" height="213" alt="Black pirate flag with skull and crossbones">
+    <figcaption>The classic Jolly Roger pirate flag, historically linked to outlaws, has become a symbol for online piracy. Modern pirates may not sail the seas, but the Jolly Roger remains the icon for piracy. (Image: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Edward_England.svg/1920px-Flag_of_Edward_England.svg.png" target="_blank">Wikimedia Commons</a>, public domain)</figcaption>
+  </figure>
+
+  <p>Welcome to the homepage. This site covers the recent rapid growth of digital piracy, its impact on media industries, and why it matters today. Visitors are invited to explore linked pages: <a href="#" onclick="showPage('about');return false;">About</a> (site author and purpose), <a href="#" onclick="showPage('overview');return false;">Topic Overview</a> (background on piracy), <a href="#" onclick="showPage('media');return false;">Mass Media Coverage</a> (how news and entertainment portray piracy), and <a href="#" onclick="showPage('contact');return false;">Contact</a> (questions and comments form).</p>
+
+  <p class="required-note">This website fulfills an assignment for CMST 102 at Skagit Valley College.</p>
+
+  <p>Piracy often affects viewers indirectly (for example, higher costs when creators lose revenue). The site provides context and examples, like film leaks or streaming site shutdowns. Each page includes images and links to further reading or multimedia. The goal is to teach visitors about digital piracy in clear terms, teaching what it is, how it works online today, and how society is responding.</p>
+
+  <div class="callout">
+    <strong>Executive Summary:</strong> Digital piracy, defined as the unauthorized copying and sharing of media via the Internet, has seen a surprising resurgence in the past few years. After years of decline, analysts report that online piracy traffic has rebounded sharply, with global visits to pirate sites reaching 215&dash;229 billion per year by 2023&dash;2023. Industry studies estimate roughly $75&dash;$170 billion in annual losses. The growth is driven by fragmented streaming subscriptions, advanced distribution technology (VPNs, IPTV, bots), and large fed&dash;up global audiences. On this site we examine who is involved, what forms modern piracy takes, and why it is spiking now.
+  </div>
+
+  <center>
+    <p><b>You are visitor number:</b></p>
+    <div class="counter" id="counter">000001</div>
+  </center>
+
+  <hr class="rainbow">
+  <center><i>~ thanks 4 visiting ~ tell your friends ~</i></center>
+
+  <div class="sources">
+    <strong>Sources:</strong>
+    <ul>
+      <li><a href="https://www.electroiq.com/stats/piracy-statistics/" target="_blank">ElectroIQ &ndash; Piracy Statistics</a></li>
+      <li><a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO &ndash; 2023 Piracy By Industry Report</a></li>
+      <li><a href="https://doverunner.com/cybersecurity-podcast/digital-piracy-threat-content-security-roi-insights/" target="_blank">DoveRunner &ndash; Cybersecurity &amp; DRM (2026 podcast summary)</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <h2>~ ABOUT ~</h2>
+  <hr class="rainbow">
+
+  <p>Hello, I&rsquo;m Ryder Hendrix, a college student at Skagit Valley College who created this site for a Communications class. I tend to study more technology than media but both heavily pertain to me, and I chose &ldquo;digital piracy&rdquo; as my topic because it connects to many subjects I care about. From movies to video games, I observed recently how often people talk about pirating these things online for free. That sparked my curosity and got me thinking: How big is digital piracy today, and why is it happening?</p>
+
+  <p>Recent industry data shows huge growth in piracy, which piqued my interest. For example, research firm MUSO reports that online piracy visits jumped from about 182 billion in 2021 to 229 billion in 2023 (<a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO, 2023</a>). That motivated me to dig deeper.</p>
+
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/British_sailors_boarding_an_Algerine_pirate_ship.jpg/960px-British_sailors_boarding_an_Algerine_pirate_ship.jpg?_=20170507161636" width="480" height="320" alt="Painting of British sailors boarding a pirate ship.">
+    <figcaption>Painting of British sailors boarding a pirate ship. (Image: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/British_sailors_boarding_an_Algerine_pirate_ship.jpg/960px-British_sailors_boarding_an_Algerine_pirate_ship.jpg?_=20170507161636" target="_blank">Wikimedia Commons</a>, CC BY-SA 3.0)</figcaption>
+  </figure>
+
+  <p>As someone studying technology and therefore communications,  I was drawn to how media topics like this are discussed in the news. I wanted to learn myself and share with others. I'd like to note quickly on here that since I wrote this page in HTML and Javascript, I frequently use dashes (-) and en dashes (–) for different purposes, because of the connotation given by AI, I try my hardest not to use em dashes (—) but in some places it looks nicest for formatting. My writing is all original and any facts from other sources are clearly cited.</p>
+
+  <p>For more background on copyright and infringement trends in Europe, visit the <a href="https://www.euipo.europa.eu/en/publications/observatory-publications" target="_blank">EUIPO Observatory publications page</a>.</p>
+
+  <div class="sources">
+    <strong>Sources:</strong>
+    <ul>
+      <li><a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO &ndash; 2023 Piracy By Industry Report</a></li>
+      <li><a href="https://www.euipo.europa.eu/" target="_blank">EUIPO &ndash; European Union Intellectual Property Office</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- TOPIC OVERVIEW -->
+<div id="overview" class="page">
+  <h2>~ TOPIC OVERVIEW ~</h2>
+  <hr class="rainbow">
+  <p class="construction">&#9888; EDUCATIONAL CONTENT AHEAD &#9888;</p>
+
+  <h3>What is digital piracy?</h3>
+  <p>It means sharing copyrighted media (movies, music, books, games, etc.) without permission via the Internet. Classic methods include torrenting or direct downloads, but now streaming or mobile apps often offer illegal content too. For example, as of 2023 there were over 229 billion annual visits to piracy websites worldwide (<a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO, 2023</a>). Digital pirates include individuals downloading or uploading, and organized groups running illegal streaming platforms.</p>
+
+  <h3>Who is involved?</h3>
+  <p>On the consumer side, studies find millions of Internet users, especially younger people, access pirated media. For instance, one report notes that Gen Z and millennials account for over 70% of piracy site traffic (<a href="https://www.electroiq.com/stats/piracy-statistics/" target="_blank">ElectroIQ</a>). On the supplier side, piracy is often run by international networks. An EU police operation (Kratos 2, 2026) took down nine organized crime groups behind sports and media streaming sites (<a href="https://www.europol.europa.eu/media-press/newsroom/news/29-arrested-law-enforcement-strikes-criminal-networks-behind-illegal-streaming" target="_blank">Europol</a>). Even social media can be a factor, with some users reposting copyrighted videos or music on TikTok or Instagram.</p>
+
+  <h3>Where and When?</h3>
+  <p>Piracy is global. High-income countries (US, UK, Germany) tend to see billions of visits, but rapidly developing markets (India, Brazil, Indonesia) have shown the fastest growth. By MUSO&rsquo;s count, the U.S., Russia, Brazil, and India led piracy traffic in 2018 (<a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO</a>). Trends by year: piracy visits were roughly 190B in 2018, dipped slightly, and then jumped to 182B in 2021, 215B in 2022, and 229B in 2023. An EUIPO report noted a 3.3% rise in piracy in 2022 after years of decline (<a href="https://www.euipo.europa.eu/en/publications/online-copyright-infringement-in-eu-2023" target="_blank">EUIPO, 2023</a>). In Europe, people now average about 10 accesses of pirated material per month.</p>
+
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Avery_Chasing_the_Great_Mughal%27s_Ship.jpg/1920px-Avery_Chasing_the_Great_Mughal%27s_Ship.jpg" width="480" height="360" alt="Wooden sailing pirate ship on calm water">
+    <figcaption>A historic-style pirate ship. Pirate ships like this evoke the roots of piracy, now mirrored by millions of pirates sailing the digital seas. (Image: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Avery_Chasing_the_Great_Mughal%27s_Ship.jpg/1920px-Avery_Chasing_the_Great_Mughal%27s_Ship.jpg" target="_blank">Wikimedia Commons</a>, public domain)</figcaption>
+  </figure>
+
+  <h3>Why is piracy increasing now?</h3>
+  <p>Several modern day factors contribute. One is the phenomena of streaming fragmentation, with Netflix, Disney+, HBO Max and many others launching (especially in 2018&dash;2022), content became scattered under several different paywalls. Research indicates many users turn to piracy when legal access is complicated or costly, which legal streaming has currently amounted to both. For example, the American Entertainment Association reported users justifying piracy by &ldquo;the explosion of streaming options&rdquo; and rising subscription costs. The advancement of technology also helps pirates, with easy-to-use VPNs and streaming devices allowing hidden access to illegal streams. Social norms play a role too, with some viewing piracy-streaming as acceptable or low-risk, as opposed to torrenting.</p>
+
+  <h3>How does piracy happen?</h3>
+  <p>In technical terms, common methods include peer-to-peer (BitTorrent) file sharing, streaming from illegal sites or apps, and &ldquo;stream-ripping&rdquo; (downloading audio from YouTube and similar sites). MUSO data shows streaming sites are now the dominant piracy method:, with about 60% of piracy traffic coming from unlicensed web streaming (<a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO</a>). For music, stream-ripping sites accounted for 39% of piracy in 2021, reflecting a shift from downloading MP3s to ripping from video sites (<a href="https://www.musicbusinessworldwide.com/music-piracy-plummeted-in-the-past-5-years-but-in-2021-it-slowly-started-growing-again/" target="_blank">Music Business Worldwide, 2021</a>).</p>
+
+  <p>In summary, digital piracy has surged recently due to a mix of economic pressures (high subscription fees), improved technology (VPNs, streaming ports), and global demand. For in-depth industry data, see the <a href="https://www.muso.com/insights" target="_blank">MUSO Insights research hub</a>.</p>
+
+  <p><strong>Related podcast:</strong> The DoveRunner Cybersecurity podcast (Feb 2026) devoted an episode to piracy, noting how it has evolved into an organized global operation causing roughly 15&ndash;30% revenue losses (<a href="https://doverunner.com/cybersecurity-podcast/digital-piracy-threat-content-security-roi-insights/" target="_blank">DoveRunner</a>).</p>
+
+  <div class="sources">
+    <strong>Sources (minimum five):</strong>
+    <ul>
+      <li><a href="https://www.muso.com/piracy-by-industry-report-2023" target="_blank">MUSO &ndash; 2023 Piracy By Industry Report</a></li>
+      <li><a href="https://www.euipo.europa.eu/en/publications/online-copyright-infringement-in-eu-2023" target="_blank">EUIPO &ndash; 2023 report on copyright infringement</a></li>
+      <li><a href="https://www.electroiq.com/stats/piracy-statistics/" target="_blank">ElectroIQ &ndash; Piracy statistics and demographics</a></li>
+      <li><a href="https://www.musicbusinessworldwide.com/music-piracy-plummeted-in-the-past-5-years-but-in-2021-it-slowly-started-growing-again/" target="_blank">Music Business Worldwide &ndash; Music piracy trends</a></li>
+      <li><a href="https://www.europol.europa.eu/media-press/newsroom/news/29-arrested-law-enforcement-strikes-criminal-networks-behind-illegal-streaming" target="_blank">Europol &ndash; Operation Kratos 2 enforcement report</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- MASS MEDIA COVERAGE -->
+<div id="media" class="page">
+  <h2>~ MASS MEDIA COVERAGE ~</h2>
+  <hr class="rainbow">
+
+  <p>The media&rsquo;s treatment of digital piracy spans news stories, films/TV, books, podcasts, and even music. Below are examples from different formats illustrating how piracy is portrayed or critiqued:</p>
+
+  <div class="media-example">
+    <h4>1. Newspaper &ndash; Film leak (<em>The Independent</em>)</h4>
+    <p>Major news outlets report on high-profile leaks. <em>The Independent</em> covered how <em>Avengers: Endgame</em> (2019) was illicitly filmed and shared online before its U.S. premiere (<a href="https://www.the-independent.com/arts-entertainment/films/news/avengers-endgame-leak-footage-reddit-twitter-plot-spoiler-mcu-a8871806.html" target="_blank">The Independent</a>). These stories show how blockbusters are immediately targeted by pirates and often spark industry calls for anti-piracy measures.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>2. Trade press / Magazine &ndash; TV piracy (<em>Variety</em>)</h4>
+    <p>Trade press like <em>Variety</em> discusses top pirated titles, noting <em>Spider-Man: No Way Home</em> and <em>House of the Dragon</em> among the most-streamed illegally (<a href="https://variety.com/2023/biz/news/most-pirated-film-tv-titles-see-uneven-impact-from-streaming-1235514863/" target="_blank">Variety</a>).</p>
+  </div>
+
+  <div class="media-example">
+    <h4>3. Internet / Gaming media &ndash; ROM site raid (<em>Kotaku</em>)</h4>
+    <p><em>Kotaku</em> detailed a July 2025 FBI operation that seized NSW2U, a popular Nintendo Switch ROM site responsible for roughly 36 million visits and an estimated $170 million in lost sales (<a href="https://kotaku.com/nintendo-orders-rom-site-to-destroy-all-its-games-or-1847487357" target="_blank">Kotaku</a>).</p>
+  </div>
+
+  <div class="media-example">
+    <h4>4. Video games &ndash; Pre-release leaks</h4>
+    <p>Tech and gaming news cover when new games or consoles are leaked early, such as reports of <em>GTA VI</em> pre-release leaks and rumors of console bans for pirating on Switch 2.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>5. Internet / Technology &ndash; Anti-piracy lobbying (<em>TechSpot</em>)</h4>
+    <p><em>TechSpot</em> reported in 2024 that Hollywood studios and the Motion Picture Association were lobbying the U.S. Congress for new anti-piracy laws targeting illegal streaming sites (<a href="https://www.techspot.com/news/102566-mpa-plans-collaborate-congress-piracy-website-blocking-legislation.html" target="_blank">TechSpot</a>).</p>
+  </div>
+
+  <div class="media-example">
+    <h4>6. Internet &ndash; Industry coalition (<em>ACE</em> / TorrentFreak)</h4>
+    <p>The Alliance for Creativity and Entertainment regularly announces takedowns in Europe and Asia; tech blogs such as <a href="https://torrentfreak.com/" target="_blank">TorrentFreak</a> publish these industry press releases.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>7. Television / Sports media &ndash; Live stream raids</h4>
+    <p>Authorities recently estimated nearly 850,000 pirated sports event links shut down by a Europol-led raid, Operation Kratos 2 (<a href="https://www.europol.europa.eu/media-press/newsroom/news/29-arrested-law-enforcement-strikes-criminal-networks-behind-illegal-streaming" target="_blank">Europol, 2026</a>).</p>
+  </div>
+
+  <div class="media-example">
+    <h4>8. Books &amp; Academic journalism &ndash; EUIPO studies</h4>
+    <p>Academic press releases and articles (e.g., EUIPO&rsquo;s 2023 report on copyright infringement) are covered by news outlets. Investigative journalism has also profiled famous pirates such as Kim Dotcom and Megaupload.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>9. Music industry trade press &ndash; Rising music piracy</h4>
+    <p><em>Music Business Worldwide</em> highlighted that after a period of decline, online music piracy began rising again in 2021 (<a href="https://www.musicbusinessworldwide.com/music-piracy-plummeted-in-the-past-5-years-but-in-2021-it-slowly-started-growing-again/" target="_blank">Music Business Worldwide</a>). The RIAA also regularly issues news on shutting down stream-ripping sites.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>10. Radio / Podcast &ndash; DoveRunner Cybersecurity (Feb 2026)</h4>
+    <p>The DoveRunner Cybersecurity podcast devoted an episode to piracy, noting how it has evolved into an organized global operation causing roughly 15&ndash;30% revenue losses (<a href="https://doverunner.com/cybersecurity-podcast/digital-piracy-threat-content-security-roi-insights/" target="_blank">DoveRunner</a>).</p>
+  </div>
+
+  <div class="media-example">
+    <h4>11. Internet / Video &ndash; YouTube commentary</h4>
+    <p>Tech commentators on YouTube debate piracy trends; one popular framing is &ldquo;<a href="https://www.youtube.com/watch?v=UttzqOFpYdE" target="_blank">The Streaming War Is Over. Piracy Won,</a>&rdquo; analyzing how consumer frustration led to widespread pirate streaming.</p>
+  </div>
+
+  <div class="media-example">
+    <h4>12. Internet / Social media &ndash; Reddit and enforcement news</h4>
+    <p>Reddit&rsquo;s r/piracy has roughly 1.2M members discussing justifications for piracy. In early 2023, UK authorities announced police visits to thousands of alleged illegal stream watchers, a story covered widely in the press (<a href="https://www.the-independent.com/tech/piracy-free-online-streams-uk-laws-b2259510.html" target="_blank">The Independent / FACT report</a>).</p>
+  </div>
+
+  <p>Collectively, these examples show that the press tracks big piracy stories (movie leaks, game ROM seizures) and the industry responds with newsworthy enforcement actions.</p>
+
+  <h3>Comparative Data (Trends, Enforcement, Platform Responses)</h3>
+  <table class="data">
+    <tr>
+      <th>Year</th>
+      <th>Piracy Trends (global)</th>
+      <th>Enforcement (actions)</th>
+      <th>Platform / Industry Responses</th>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>~190B total visits; downward in UK, fast growth in Brazil/Asia. TV streaming main content.</td>
+      <td>EU discusses sports-stream piracy laws (later 2021); some law enforcement raids on torrent sites.</td>
+      <td>Streaming expands globally (Netflix global, new services launching). Early Netflix crackdown on password sharing; emphasis on geo-blocking.</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Stable or slight decline in mature markets; emerging markets up.</td>
+      <td>Ongoing anti-piracy operations (e.g., sports streams). Industry planning legal measures.</td>
+      <td>Disney+, Apple TV+ prepare launch (2019&dash;20), increasing fragmentation. Consolidation of streaming rights.</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Mixed: EUIPO found film/TV piracy down during COVID lockdowns, music steady, software up.</td>
+      <td>Pandemic limited enforcement (courts closed); shift to online monitoring.</td>
+      <td>Lockdowns boost legitimate streaming. Some platforms relax password-sharing rules; anti-piracy watermarking sees interest.</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>182B visits (MUSO), up ~18% from 2020. Music piracy ticks up 2% vs 2020.</td>
+      <td>UK &amp; EU: sports piracy crackdown begins; UK police issue warnings to streamers.</td>
+      <td>Streaming fragmentation continues (HBO Max, Discovery+ launch). Pricing debates begin; studios urge site-blocking laws.</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>215B visits (MUSO), +18% YOY; EUIPO notes piracy +3.3%. Live sports piracy surges.</td>
+      <td>Global takedowns (e.g., IPTV networks): Europol-led operation 2022; ACE coalition reports takedowns.</td>
+      <td>Industry pushes new policies: discussions of US streaming anti-piracy legislation. Platforms add more DRM.</td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>229B visits (MUSO), continuing rise. TechSpot: piracy +12% since 2019. Streaming dominates delivery.</td>
+      <td>FBI/DOJ operations target pirate sites worldwide. Ongoing EU and national enforcement.</td>
+      <td>Consumer pushback on high prices. Some platforms crack down on jailbreak devices; bundling promotions offered.</td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Trends suggest piracy still up amid many streaming options. Music piracy growing via stream-ripping.</td>
+      <td>MPA and studios escalate lobbying for US site-blocking laws; EU Digital Services Act enforcement begins.</td>
+      <td>Platforms double down on anti-piracy tech (forensic watermarking, AI takedowns). Some consolidation (e.g., Warner Discovery).</td>
+    </tr>
+    <tr>
+      <td>2025&dash;26</td>
+      <td>Law enforcement highlights (e.g., Dec 2025: FBI seizes Nintendo ROM site). Focus shifts to big operators.</td>
+      <td>Operation Kratos 2 (June 2026): Europol dismantles major illegal sports streaming networks.</td>
+      <td>Content owners invest in proactive anti-piracy (AI detection, licensed bundles). Industry experiments with pricing models.</td>
+    </tr>
+  </table>
+
+  <h3>Timeline of Major Events (2018&ndash;2026)</h3>
+  <ul class="timeline">
+    <li><strong>2018</strong> &ndash; Global piracy hits ~190B visits (MUSO data).</li>
+    <li><strong>2021</strong> &ndash; EU Parliament targets live sports streams, calls for 30-min removal of pirated sports content.</li>
+    <li><strong>2023</strong> &ndash; UK police notify 1,000+ homes about illegal streaming (FACT / <em>Independent</em> report).</li>
+    <li><strong>2024</strong> &ndash; US studios (MPA) publicly push Congress to enact piracy site-blocking law.</li>
+    <li><strong>2025</strong> &ndash; FBI shuts down NSW2U, major Switch ROM piracy site (36M visits, ~$170M loss).</li>
+    <li><strong>2026</strong> &ndash; Europol&rsquo;s Operation Kratos II (June) arrests 29 cybercriminals, takes down 27K streaming URLs.</li>
+  </ul>
+
+  <div class="sources">
+    <strong>Sources:</strong>
+    <ul>
+      <li><a href="https://www.the-independent.com/arts-entertainment/films/news/avengers-endgame-leak-footage-reddit-twitter-plot-spoiler-mcu-a8871806.html" target="_blank">The Independent &ndash; Avengers film leak coverage</a></li>
+      <li><a href="https://kotaku.com/nintendo-orders-rom-site-to-destroy-all-its-games-or-1847487357" target="_blank">Kotaku &ndash; Nintendo ROM site raid</a></li>
+      <li><a href="https://www.techspot.com/news/102566-mpa-plans-collaborate-congress-piracy-website-blocking-legislation.html" target="_blank">TechSpot &ndash; MPA lobbying</a></li>
+      <li><a href="https://www.musicbusinessworldwide.com/music-piracy-plummeted-in-the-past-5-years-but-in-2021-it-slowly-started-growing-again/" target="_blank">Music Business Worldwide &ndash; Music piracy trends</a></li>
+      <li><a href="https://variety.com/2023/biz/news/most-pirated-film-tv-titles-see-uneven-impact-from-streaming-1235514863/" target="_blank">Variety &ndash; Top pirated titles</a></li>
+      <li><a href="https://torrentfreak.com/" target="_blank">TorrentFreak &ndash; ACE takedown reports</a></li>
+      <li><a href="https://www.europol.europa.eu/media-press/newsroom/news/29-arrested-law-enforcement-strikes-criminal-networks-behind-illegal-streaming" target="_blank">Europol &ndash; Operation Kratos 2</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <h2>~ CONTACT ~</h2>
+  <hr class="rainbow">
+
+  <p>If you have questions or feedback about this topic, you can reach me via the contact form on this page. Please enter your name and message, and I will try to respond by email. This page is intended for respectful inquiries only.</p>
+
+  <figure>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/One_piece_logo_1.svg/500px-One_piece_logo_1.svg.png?_=20240426123220" width="320" height="120" alt="One Piece logo with pirate ship imagery">
+    <figcaption>The logo of the anime &ldquo;One Piece&rdquo;, &ldquo;One Piece&rdquo; being an example of pirate imagery in pop culture. (Image: <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/One_piece_logo_1.svg/500px-One_piece_logo_1.svg.png?_=20240426123220" target="_blank">One Piece logo</a>, fair use for commentary)</figcaption>
+  </figure>
+
+  <form class="contact-form" onsubmit="submitContact(event)">
+    <label for="c-name">Your Name:</label>
+    <input type="text" id="c-name" name="name" required>
+
+    <label for="c-email">Your Email (for reply):</label>
+    <input type="email" id="c-email" name="email" required>
+
+    <label for="c-message">Your Message:</label>
+    <textarea id="c-message" name="message" rows="6" required></textarea>
+
+    <button type="submit">&gt;&gt;&gt; SEND MESSAGE &lt;&lt;&lt;</button>
+  </form>
+
+  <p id="form-thanks" class="thanks" style="display:none;">Thank you for your message! I will respond as soon as possible.</p>
+
+  <p>To prevent spam, I do not display my personal email; the form is the only way to contact me for this class project. See the Sources lists on other pages for authoritative links. Thank you for visiting my site on digital piracy!</p>
+
+  <p>For additional research, visit <a href="https://www.muso.com/insights" target="_blank">MUSO Insights</a> or the <a href="https://www.euipo.europa.eu/en/publications/observatory-publications" target="_blank">EUIPO Observatory</a>.</p>
+
+  <div class="sources">
+    <strong>Sources:</strong> This page does not cite new facts; for external data referenced elsewhere on this site, see the sources listed on the Home, Topic Overview, and Mass Media Coverage pages.
+  </div>
+</div>
+
+</td>
+</tr>
+</table>
+
+<div class="site-footer">
+  <span class="badge">MADE WITH NOTEPAD++</span>
+  <span class="badge">IE 5.5 TESTED</span>
+  <span class="badge">NO FRAMES*</span>
+  <br><br>
+  CMST 102 &ndash; Skagit Valley College &nbsp;|&nbsp; Last updated: June 8, 2026
+  <br><small>*single-file multi-page site using JavaScript</small>
+</div>
+
+</div>
+
+<script>
+function showPage(id) {
+  var pages = document.querySelectorAll('.page');
+  var links = document.querySelectorAll('.nav a');
+  for (var i = 0; i < pages.length; i++) pages[i].className = 'page';
+  for (var j = 0; j < links.length; j++) links[j].className = '';
+  document.getElementById(id).className = 'page active';
+  document.getElementById('nav-' + id).className = 'active';
+  window.scrollTo(0, 0);
+}
+
+function submitContact(e) {
+  e.preventDefault();
+  document.getElementById('form-thanks').style.display = 'block';
+  e.target.reset();
+}
+
+var count = parseInt(localStorage.getItem('piracyVisitors') || '0', 10) + 1;
+localStorage.setItem('piracyVisitors', count);
+document.getElementById('counter').textContent = ('000000' + count).slice(-6);
+</script>
+
 </body>
 </html>
